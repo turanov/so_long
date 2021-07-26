@@ -17,67 +17,65 @@
 # define COP_LEFT 'L'
 # define COP_RIGHT 'R'
 
-#include "libft/libft.h"
-#include "get_next_line/get_next_line.h"
-#include "minilibx/mlx.h"
-#include <stdio.h>
+# include "libft/libft.h"
+# include "get_next_line/get_next_line.h"
+# include "minilibx_opengl_20191021/mlx.h"
+# include <stdio.h>
 
 typedef struct s_xpm
 {
 	int		i;
 	int		j;
 	void	*img;
-}				t_xpm;
-typedef struct
+}			t_xpm;
+
+typedef struct s_coordinate
 {
-	int i;
-	int j;
-}				t_coordinate;
+	int		i;
+	int		j;
+}			t_coordinate;
 
-
-typedef struct
+typedef struct s_data
 {
-	int width;
-	int height;
-	char **map;
+	int				width;
+	int				height;
+	char			**map;
 
-	void *mlx_ptr;
-	void *win_ptr;
+	void			*mlx_ptr;
+	void			*win_ptr;
 
-	int coins;
-	int moves;
-	int goals;
-	int is_dead;
+	int				coins;
+	int				moves;
+	int				goals;
+	int				is_dead;
 
-	unsigned int change_coin;
-	unsigned int coin_mod_cnt;
-	unsigned int change_cop;
-	unsigned int random;
+	unsigned int	change_coin;
+	unsigned int	coin_mod_cnt;
+	unsigned int	change_cop;
+	unsigned int	random;
 
-	t_xpm	xpm_coin;
-	t_xpm	xpm_wall;
-	t_xpm	xpm_empt;
-	t_xpm	xpm_exit;
-	t_xpm	xpm_black;
-	t_xpm	xpm_door_closed;
-	t_xpm	xpm_door_opened;
-	t_xpm	xpm_player;
-	t_xpm	xpm_player_dead;
-	t_xpm	xpm_player_front;
-	t_xpm	xpm_player_back;
-	t_xpm	xpm_player_left;
-	t_xpm	xpm_player_right;
-	t_xpm	xpm_cop;
-	t_xpm	xpm_cop_front;
-	t_xpm	xpm_cop_back;
-	t_xpm	xpm_cop_left;
-	t_xpm	xpm_cop_right;
-	t_coordinate player_coor;
-}        t_data;
+	t_xpm			xpm_coin;
+	t_xpm			xpm_wall;
+	t_xpm			xpm_empt;
+	t_xpm			xpm_exit;
+	t_xpm			xpm_black;
+	t_xpm			xpm_door_closed;
+	t_xpm			xpm_door_opened;
+	t_xpm			xpm_player;
+	t_xpm			xpm_player_dead;
+	t_xpm			xpm_player_front;
+	t_xpm			xpm_player_back;
+	t_xpm			xpm_player_left;
+	t_xpm			xpm_player_right;
+	t_xpm			xpm_cop;
+	t_xpm			xpm_cop_front;
+	t_xpm			xpm_cop_back;
+	t_xpm			xpm_cop_left;
+	t_xpm			xpm_cop_right;
+	t_coordinate	player_coor;
+}					t_data;
 
-void ft_print_data(t_data *data);
-
-
+void	ft_print_data(t_data *data);
 void	read_file(char *filename, t_data *data);
 void	ft_run(t_data *data);
 void	ft_create_xmp_for_all(t_data *data);

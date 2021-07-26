@@ -61,7 +61,6 @@ void	ft_run(t_data *data)
 	data->win_ptr = mlx_new_window(data->mlx_ptr, data->width * PIXEL,
 			data->height * PIXEL + HEIGHT, "SO LONG");
 	mlx_hook(data->win_ptr, 2, 1L << 0, ft_key_listener, data);
-	mlx_hook(data->win_ptr, 33, 1L << 5, free_data_and_quit, data);
 	mlx_hook(data->win_ptr, 17, 1L << 5, free_data_and_quit, data);
 	mlx_loop_hook(data->mlx_ptr, ft_display, data);
 	mlx_loop(data->mlx_ptr);

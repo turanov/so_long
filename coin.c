@@ -14,9 +14,9 @@ void	ft_put_to_window_moves_and_coins(t_data *data)
 	mlx_put_image_to_window(data->mlx_ptr, data->win_ptr,
 		data->xpm_black.img, 50, 0);
 	mlx_string_put(data->mlx_ptr, data->win_ptr, 50, 10, 0xFF99FF, moves_str);
-	mlx_string_put(data->mlx_ptr, data->win_ptr, 100, 10, 0xCCCCCC, moves_cnt);
+	mlx_string_put(data->mlx_ptr, data->win_ptr, 110, 10, 0xCCCCCC, moves_cnt);
 	mlx_string_put(data->mlx_ptr, data->win_ptr, 50, 30, 0xFF99FF, coins_str);
-	mlx_string_put(data->mlx_ptr, data->win_ptr, 100, 30, 0xCCCCCC, coins_cnt);
+	mlx_string_put(data->mlx_ptr, data->win_ptr, 110, 30, 0xCCCCCC, coins_cnt);
 	free(moves_str);
 	free(moves_cnt);
 	free(coins_str);

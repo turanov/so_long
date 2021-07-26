@@ -17,10 +17,12 @@ OBJS 		= ${SRCS:.c=.o}
 all: 		${NAME}
 
 .c.o:
-			${CC} ${CFLAGS} -Iminilibx -c $< -o ${<:.c=.o}
+			${CC} ${CFLAGS}  -c $< -o ${<:.c=.o}
 
 $(NAME): 	$(OBJS)
-			$(CC) $(OBJS) $(CFLAGS) libft/libft.a   -Lminilibx -lmlx -framework OpenGL -framework AppKit -o $(NAME)
+			$(CC) $(OBJS) $(CFLAGS) libft/libft.a   -Lminilibx_opengl_20191021 -lmlx -framework OpenGL -framework AppKit -o $(NAME)
+
+bonus:		all
 
 clean:
 			${RM} ${OBJS}

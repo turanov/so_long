@@ -7,14 +7,16 @@ int	ft_key_listener(int key, t_data *data)
 	if (data->is_dead == 0)
 	{
 		data->random++;
-		if (key == 13)
+		if (key == 13 || key == 126)
 			ft_on_click_w(data);
-		else if (key == 1)
+		else if (key == 1 || key == 125)
 			ft_on_click_s(data);
-		else if (key == 0)
+		else if (key == 0 || key == 123)
 			ft_on_click_a(data);
-		else if (key == 2)
+		else if (key == 2 || key == 124)
 			ft_on_click_d(data);
+		else
+			printf("%d\n", key);
 	}
 	return (key);
 }
